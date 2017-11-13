@@ -18,6 +18,7 @@
 		7F6551281FB8D9D4003F0F16 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6551271FB8D9D4003F0F16 /* ThirdViewController.swift */; };
 		7F65512A1FB8D9EB003F0F16 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6551291FB8D9EB003F0F16 /* FourthViewController.swift */; };
 		7F65512C1FB8D9FC003F0F16 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65512B1FB8D9FC003F0F16 /* SettingsViewController.swift */; };
+		7FC017531FBA4F30005DC481 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC017521FBA4F30005DC481 /* CustomCell.swift */; };
 		BED7CD36E4B06BB303A5D46C /* Pods_Budget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1E808529528F8A083CD759 /* Pods_Budget.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		7F6551271FB8D9D4003F0F16 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		7F6551291FB8D9EB003F0F16 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		7F65512B1FB8D9FC003F0F16 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7FC017521FBA4F30005DC481 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		8BF171488693F461CFF489DC /* Pods-Budget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Budget/Pods-Budget.release.xcconfig"; sourceTree = "<group>"; };
 		CF1E808529528F8A083CD759 /* Pods_Budget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				7F6551271FB8D9D4003F0F16 /* ThirdViewController.swift */,
 				7F6551291FB8D9EB003F0F16 /* FourthViewController.swift */,
 				7F65512B1FB8D9FC003F0F16 /* SettingsViewController.swift */,
+				7FC017521FBA4F30005DC481 /* CustomCell.swift */,
 			);
 			path = Budget;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				7F6550FA1FB8CDEA003F0F16 /* FirstViewController.swift in Sources */,
 				7F65512A1FB8D9EB003F0F16 /* FourthViewController.swift in Sources */,
 				7F65512C1FB8D9FC003F0F16 /* SettingsViewController.swift in Sources */,
+				7FC017531FBA4F30005DC481 /* CustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,12 +530,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AP68SB76A6;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
 				INFOPLIST_FILE = Budget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhan.Budget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -542,12 +548,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AP68SB76A6;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
 				INFOPLIST_FILE = Budget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhan.Budget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
