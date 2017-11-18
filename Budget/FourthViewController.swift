@@ -13,7 +13,8 @@ class FourthViewController: UIViewController {
     let formatter = DateFormatter()
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
-    
+    @IBOutlet weak var yearLabel : UILabel!
+    @IBOutlet weak var monthLabel : UILabel!
     
     let outsideMonthTextColor = UIColor(colorWithHexValue : 0x584A66)
     let thisMonthTextColor = UIColor.white
@@ -33,9 +34,14 @@ class FourthViewController: UIViewController {
     }
     
     func setupCalendarView(){
+        //Setup calendar spacing
         calendarView.minimumLineSpacing = 0
-        //removes the individual cell insets
         calendarView.minimumInteritemSpacing = 0
+        
+        //Setup labels
+        calendarView.visibleDates { visibleDates in
+            self.setupViewsOfCalendar(from: visibleDates)
+        }
     }
     
     func handleCellTextSelected(view : JTAppleCell?, cellState : CellState){
@@ -58,6 +64,16 @@ class FourthViewController: UIViewController {
                 validCell.dateLabel.textColor = outsideMonthTextColor
             }
         }
+    }
+    
+    func setupViewsOfCalendar(from visibleDates: DateSegmentInfo){
+        let date = visibleDates.monthDates.first!.date
+        
+        self.formatter.dateFormat = "yyyy"
+        self.yearLabel.text = self.formatter.string(from: date)
+        
+        self.formatter.dateFormat = "MMMM"
+        self.monthLabel.text = self.formatter.string(from: date)
     }
 }
 
@@ -121,6 +137,10 @@ extension FourthViewController : JTAppleCalendarViewDataSource {
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellTextSelected(view : cell, cellState : cellState)
         handleCellTextColor(view : cell, cellState : cellState)
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        setupViewsOfCalendar(from: visibleDates)
     }
 }
 
