@@ -16,15 +16,27 @@ class FourthViewController: UIViewController {
     @IBOutlet weak var yearLabel : UILabel!
     @IBOutlet weak var monthLabel : UILabel!
     
-    let outsideMonthTextColor = UIColor(colorWithHexValue : 0x584A66)
-    let thisMonthTextColor = UIColor.white
-    let selectedMonthColor = UIColor(colorWithHexValue : 0x3A294B)
-    let currentDateSelectedViewColor = UIColor(colorWithHexValue : 0x4E3F5B)
+    let outsideMonthTextColor = UIColor(colorWithHexValue : 0xFFBDBDBD)
+    let thisMonthTextColor = UIColor(colorWithHexValue : 0xFF616161)
+    let selectedMonthColor = UIColor(colorWithHexValue : 0xdf642f)
+    //let currentDateSelectedViewColor = UIColor(colorWithHexValue : 0x4E3F5B)
+    
+    
+    let todayDateTextColor = UIColor.blue
+    
+    let today = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         os_log("fourth view controller here", log: OSLog.default, type: .info)
         setupCalendarView()
+        
+        
+        print("todays date is ----->")
+        print(today)
+        print("year is ")
+        print("month is ");
+        
     }
     
     
@@ -67,6 +79,8 @@ class FourthViewController: UIViewController {
     }
     
     func setupViewsOfCalendar(from visibleDates: DateSegmentInfo){
+
+        
         let date = visibleDates.monthDates.first!.date
         
         self.formatter.dateFormat = "yyyy"
@@ -85,10 +99,6 @@ extension FourthViewController : JTAppleCalendarViewDelegate {
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         /*
-        formatter.dateFormat = "yyyy MM dd"
-        formatter.timeZone = Calendar.current.timeZone
-        formatter.locale = Calendar.current.locale
-        
         let startDate = formatter.date(from: "2017 11 01")! // You can use date generated from a formatter
         let endDate = Date()                                // You can also use dates created from this function
         let calendar = Calendar.current                     // Make sure you set this up to your time zone. We'll just use default here
@@ -108,7 +118,18 @@ extension FourthViewController : JTAppleCalendarViewDelegate {
         
         let startDate = formatter.date(from: "2017 01 01")!
         let endDate = formatter.date(from: "2017 12 31")!
-        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+        let calendar = Calendar.current
+        //let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+        
+        let parameters = ConfigurationParameters(startDate: startDate,
+            endDate: endDate,
+            numberOfRows: 6,
+            calendar: calendar,
+            generateInDates: .forAllMonths,
+            generateOutDates: .tillEndOfGrid,
+            firstDayOfWeek: .sunday,
+            hasStrictBoundaries : true)
+        
         
         return parameters
     }
