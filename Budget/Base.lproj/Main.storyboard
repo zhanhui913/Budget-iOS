@@ -216,7 +216,7 @@
                                                             <subviews>
                                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwa-vS-1Oz">
                                                                     <rect key="frame" x="30" y="24.5" width="40" height="40"/>
-                                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" red="0.20535965263843536" green="0.470427006483078" blue="0.96476280689239502" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="KOH-d4-nyi"/>
                                                                         <constraint firstAttribute="width" constant="40" id="TG4-Ak-e0p"/>
@@ -274,7 +274,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NVr-Hw-gnw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Fourth" image="second" id="fcw-jf-vV0"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="second" id="fcw-jf-vV0"/>
                     <connections>
                         <outlet property="calendarView" destination="mda-Ie-fo2" id="OTE-Qa-tD8"/>
                         <outlet property="monthLabel" destination="9AB-x5-GdP" id="UiS-zv-guz"/>
@@ -311,10 +311,10 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <segue destination="GOb-Na-iu5" kind="relationship" relationship="viewControllers" id="QhZ-WN-dip"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="92B-UB-Cyf" kind="relationship" relationship="viewControllers" id="OvO-14-wyf"/>
-                        <segue destination="GOb-Na-iu5" kind="relationship" relationship="viewControllers" id="QhZ-WN-dip"/>
                         <segue destination="WOt-It-Tqx" kind="relationship" relationship="viewControllers" id="bKJ-8i-8bv"/>
                     </connections>
                 </tabBarController>

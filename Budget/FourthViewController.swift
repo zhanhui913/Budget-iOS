@@ -16,29 +16,25 @@ class FourthViewController: UIViewController {
     @IBOutlet weak var yearLabel : UILabel!
     @IBOutlet weak var monthLabel : UILabel!
     
-    let outsideMonthTextColor = UIColor(colorWithHexValue : 0xFFBDBDBD)
-    let thisMonthTextColor = UIColor(colorWithHexValue : 0xFF616161)
-    let selectedMonthColor = UIColor(colorWithHexValue : 0xdf642f)
-    //let currentDateSelectedViewColor = UIColor(colorWithHexValue : 0x4E3F5B)
+    let outsideMonthTextColor = UIColor(colorWithHexValue : 0xFFBDBDBD) //light gray
+    let thisMonthTextColor = UIColor.darkGray
+    let selectedDateColor = UIColor.red
     
-    
-    let todayDateTextColor = UIColor.blue
+    let todayNotSelectedTextColor = UIColor(colorWithHexValue : 0x00FF00)
+    let todaySelectedTextColor = #colorLiteral(red: 0.004680971149, green: 0.4778389335, blue: 0.998493135, alpha: 1)
     
     let today = Date()
     
+    let currentCalendar = Calendar.current
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        os_log("fourth view controller here", log: OSLog.default, type: .info)
+        print("fourth view controller here")
         setupCalendarView()
         
-        
-        print("todays date is ----->")
-        print(today)
-        print("year is ")
-        print("month is ");
-        
+        calendarView.scrollToDate(today)
+        //calendarView.selectDates(today)
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -65,13 +61,21 @@ class FourthViewController: UIViewController {
         }
     }
     
-    func handleCellTextColor(view : JTAppleCell?, cellState : CellState){
+    func handleCellTextColor(view : JTAppleCell?, cellState : CellState, date : Date){
         guard let validCell = view as? CustomCell else { return }
         if cellState.isSelected {
-            validCell.dateLabel.textColor = selectedMonthColor
+            //Orig
+            //validCell.dateLabel.textColor = selectedDateColor
+            
+            //option 2
+            handleTodayCellTextColor(validCell: validCell, date: date, todayTextColor: UIColor.white, notTodayTextColor: thisMonthTextColor);
         } else {
             if cellState.dateBelongsTo == .thisMonth {
-                validCell.dateLabel.textColor = thisMonthTextColor
+                //Orig
+                //validCell.dateLabel.textColor = thisMonthTextColor
+                
+                //option 2
+                handleTodayCellTextColor(validCell: validCell, date: date, todayTextColor: todaySelectedTextColor, notTodayTextColor: thisMonthTextColor);
             } else {
                 validCell.dateLabel.textColor = outsideMonthTextColor
             }
@@ -79,8 +83,7 @@ class FourthViewController: UIViewController {
     }
     
     func setupViewsOfCalendar(from visibleDates: DateSegmentInfo){
-
-        
+        //Setup month and year view of current visible date
         let date = visibleDates.monthDates.first!.date
         
         self.formatter.dateFormat = "yyyy"
@@ -89,55 +92,49 @@ class FourthViewController: UIViewController {
         self.formatter.dateFormat = "MMMM"
         self.monthLabel.text = self.formatter.string(from: date)
     }
+    
+    func handleTodayCellTextColor(validCell : CustomCell, date: Date, todayTextColor : UIColor, notTodayTextColor : UIColor) {
+        if currentCalendar.isDateInToday(date) {
+            //Set todays date text color
+            validCell.dateLabel.textColor = todayTextColor
+        } else {
+            validCell.dateLabel.textColor = notTodayTextColor
+        }
+    }
 }
 
 
 extension FourthViewController : JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-        os_log("fourth view controller here 2", log: OSLog.default, type: .info)
+        print("fourth view controller here 2")
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
-        /*
-        let startDate = formatter.date(from: "2017 11 01")! // You can use date generated from a formatter
-        let endDate = Date()                                // You can also use dates created from this function
-        let calendar = Calendar.current                     // Make sure you set this up to your time zone. We'll just use default here
-        
-        let parameters = ConfigurationParameters(startDate: startDate,
-                                                 endDate: endDate,
-                                                 numberOfRows: 6,
-                                                 calendar: calendar,
-                                                 generateInDates: .forAllMonths,
-                                                 generateOutDates: .tillEndOfGrid,
-                                                 firstDayOfWeek: .sunday)*/
         formatter.dateFormat = "yyyy MM dd"
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        os_log("fourth view controller here 3", log: OSLog.default, type: .info)
+        print("fourth view controller here 3")
         
-        let startDate = formatter.date(from: "2017 01 01")!
-        let endDate = formatter.date(from: "2017 12 31")!
-        let calendar = Calendar.current
-        //let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+        let startDate = DateUtil.getStartYear(date: today)
+        let endDate = DateUtil.getEndYear(date: today)
         
         let parameters = ConfigurationParameters(startDate: startDate,
             endDate: endDate,
             numberOfRows: 6,
-            calendar: calendar,
+            calendar: currentCalendar,
             generateInDates: .forAllMonths,
             generateOutDates: .tillEndOfGrid,
             firstDayOfWeek: .sunday,
             hasStrictBoundaries : true)
         
+        //TODO
+        //set outDate to "end of dates"
+        //can also hide in and out dates
         
         return parameters
     }
-    
- 
-    
 }
-
 
 extension FourthViewController : JTAppleCalendarViewDataSource {
     //Display the cell
@@ -146,29 +143,25 @@ extension FourthViewController : JTAppleCalendarViewDataSource {
         cell.dateLabel.text = cellState.text
         
         handleCellTextSelected(view : cell, cellState : cellState)
-        handleCellTextColor(view : cell, cellState : cellState)
+        handleCellTextColor(view : cell, cellState : cellState, date : date)
+        
         return cell
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellTextSelected(view : cell, cellState : cellState)
-        handleCellTextColor(view : cell, cellState : cellState)
+        handleCellTextColor(view : cell, cellState : cellState, date : date)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellTextSelected(view : cell, cellState : cellState)
-        handleCellTextColor(view : cell, cellState : cellState)
+        handleCellTextColor(view : cell, cellState : cellState, date : date)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setupViewsOfCalendar(from: visibleDates)
     }
 }
-
-
-
-
-
 
 extension UIColor {
     convenience init(colorWithHexValue value: Int, alpha:CGFloat = 1.0){
