@@ -13,8 +13,7 @@ class FourthViewController: UIViewController {
     let formatter = DateFormatter()
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
-    @IBOutlet weak var yearLabel : UILabel!
-    @IBOutlet weak var monthLabel : UILabel!
+    @IBOutlet weak var dateLabel : UILabel!
     
     let outsideMonthTextColor = UIColor(colorWithHexValue : 0xFFBDBDBD) //light gray
     let thisMonthTextColor = UIColor.darkGray
@@ -88,11 +87,8 @@ class FourthViewController: UIViewController {
         //Setup month and year view of current visible date
         let date = visibleDates.monthDates.first!.date
         
-        self.formatter.dateFormat = "yyyy"
-        self.yearLabel.text = self.formatter.string(from: date)
-        
-        self.formatter.dateFormat = "MMMM"
-        self.monthLabel.text = self.formatter.string(from: date)
+        self.formatter.dateFormat = "MMM yyyy"
+        self.dateLabel.text = self.formatter.string(from: date)
     }
     
     func handleTodayCellTextColor(validCell : CustomCell, date: Date, todayTextColor : UIColor, notTodayTextColor : UIColor) {
@@ -152,6 +148,7 @@ extension FourthViewController : JTAppleCalendarViewDataSource {
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        //When scrolling calendar, change label
         setupViewsOfCalendar(from: visibleDates)
     }
 }

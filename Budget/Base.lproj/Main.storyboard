@@ -239,13 +239,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ueT-1B-4bA">
                                                 <rect key="frame" x="16" y="8" width="343" height="20.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AB-x5-GdP">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AB-x5-GdP" userLabel="Date">
                                                         <rect key="frame" x="0.0" y="0.0" width="167.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwX-oV-mfS">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwX-oV-mfS" userLabel="Cost">
                                                         <rect key="frame" x="175.5" y="0.0" width="167.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -280,8 +280,7 @@
                     <tabBarItem key="tabBarItem" title="Calendar" image="second" id="fcw-jf-vV0"/>
                     <connections>
                         <outlet property="calendarView" destination="mda-Ie-fo2" id="OTE-Qa-tD8"/>
-                        <outlet property="monthLabel" destination="9AB-x5-GdP" id="UiS-zv-guz"/>
-                        <outlet property="yearLabel" destination="iwX-oV-mfS" id="51h-EK-pup"/>
+                        <outlet property="dateLabel" destination="9AB-x5-GdP" id="pzu-MG-nX3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gze-ZY-KWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
