@@ -27,13 +27,15 @@ class FourthViewController: UIViewController {
     
     let currentCalendar = Calendar.current
     
+    var generateOutDate: OutDateCellGeneration = .tillEndOfGrid
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("fourth view controller here")
         setupCalendarView()
         
         calendarView.scrollToDate(today)
-        //calendarView.selectDates(today)
+        calendarView.selectDates([today])
     }
     
     override func didReceiveMemoryWarning() {
@@ -94,12 +96,7 @@ class FourthViewController: UIViewController {
     }
     
     func handleTodayCellTextColor(validCell : CustomCell, date: Date, todayTextColor : UIColor, notTodayTextColor : UIColor) {
-        if currentCalendar.isDateInToday(date) {
-            //Set todays date text color
-            validCell.dateLabel.textColor = todayTextColor
-        } else {
-            validCell.dateLabel.textColor = notTodayTextColor
-        }
+        validCell.dateLabel.textColor = (currentCalendar.isDateInToday(date)) ? todayTextColor : notTodayTextColor
     }
 }
 
@@ -124,13 +121,9 @@ extension FourthViewController : JTAppleCalendarViewDelegate {
             numberOfRows: 6,
             calendar: currentCalendar,
             generateInDates: .forAllMonths,
-            generateOutDates: .tillEndOfGrid,
+            generateOutDates: .tillEndOfRow,
             firstDayOfWeek: .sunday,
             hasStrictBoundaries : true)
-        
-        //TODO
-        //set outDate to "end of dates"
-        //can also hide in and out dates
         
         return parameters
     }
