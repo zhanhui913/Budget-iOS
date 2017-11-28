@@ -21,6 +21,7 @@
 		7FC017531FBA4F30005DC481 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC017521FBA4F30005DC481 /* CustomCell.swift */; };
 		7FEAE70C1FC51DAF00C215AC /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAE70B1FC51DAF00C215AC /* DateUtil.swift */; };
 		7FF5EE4C1FCB5AFB0005BF20 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5EE4B1FCB5AFB0005BF20 /* TransactionTableViewCell.swift */; };
+		7FF5EE4E1FCB834B0005BF20 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5EE4D1FCB834B0005BF20 /* CategoryViewController.swift */; };
 		BED7CD36E4B06BB303A5D46C /* Pods_Budget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1E808529528F8A083CD759 /* Pods_Budget.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		7FC017521FBA4F30005DC481 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		7FEAE70B1FC51DAF00C215AC /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		7FF5EE4B1FCB5AFB0005BF20 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		7FF5EE4D1FCB834B0005BF20 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		8BF171488693F461CFF489DC /* Pods-Budget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Budget/Pods-Budget.release.xcconfig"; sourceTree = "<group>"; };
 		CF1E808529528F8A083CD759 /* Pods_Budget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				7F65512B1FB8D9FC003F0F16 /* SettingsViewController.swift */,
 				7FC017521FBA4F30005DC481 /* CustomCell.swift */,
 				7FEAE70B1FC51DAF00C215AC /* DateUtil.swift */,
+				7FF5EE4D1FCB834B0005BF20 /* CategoryViewController.swift */,
 			);
 			path = Budget;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF5EE4E1FCB834B0005BF20 /* CategoryViewController.swift in Sources */,
 				7F6550FC1FB8CDEA003F0F16 /* SecondViewController.swift in Sources */,
 				7F6550F81FB8CDEA003F0F16 /* AppDelegate.swift in Sources */,
 				7F6551281FB8D9D4003F0F16 /* ThirdViewController.swift in Sources */,

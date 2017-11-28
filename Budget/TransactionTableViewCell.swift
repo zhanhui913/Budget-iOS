@@ -11,7 +11,7 @@ import UIKit
 class TransactionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var transactionName : UILabel!
-    
+    /*
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,6 +21,6 @@ class TransactionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
+    }*/
 
 }

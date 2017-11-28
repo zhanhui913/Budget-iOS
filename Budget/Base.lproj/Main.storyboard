@@ -14,34 +14,53 @@
         <!--Category-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="CategoryViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eWu-rJ-T20">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCell" id="dUX-m6-RPi" customClass="TransactionTableViewCell" customModule="Budget" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionTableViewCell" id="dUX-m6-RPi" customClass="TransactionTableViewCell" customModule="Budget" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dUX-m6-RPi" id="DOn-S3-MZk">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dUX-m6-RPi" id="DOn-S3-MZk">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6c-eT-53r">
-                                                    <rect key="frame" x="166.5" y="11" width="42" height="21"/>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aNJ-VN-Emq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
+                                                    <color key="backgroundColor" red="0.2053596526" green="0.47042700650000002" blue="0.96476280690000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="RGg-ua-j6v"/>
+                                                        <constraint firstAttribute="height" constant="40" id="wH1-lA-D5Z"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6c-eT-53r">
+                                                    <rect key="frame" x="166" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="aNJ-VN-Emq" firstAttribute="leading" secondItem="DOn-S3-MZk" secondAttribute="leading" id="7la-tH-U1x"/>
                                                 <constraint firstItem="T6c-eT-53r" firstAttribute="centerX" secondItem="DOn-S3-MZk" secondAttribute="centerX" id="J8k-Be-hN0"/>
                                                 <constraint firstItem="T6c-eT-53r" firstAttribute="centerY" secondItem="DOn-S3-MZk" secondAttribute="centerY" id="VKI-af-dI6"/>
+                                                <constraint firstAttribute="bottom" secondItem="aNJ-VN-Emq" secondAttribute="bottom" id="iMG-bH-sCE"/>
+                                                <constraint firstItem="aNJ-VN-Emq" firstAttribute="top" secondItem="DOn-S3-MZk" secondAttribute="top" id="lry-kc-BUb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="transactionName" destination="T6c-eT-53r" id="MPD-CY-iuP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -56,6 +75,9 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Category" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="transactionTableView" destination="eWu-rJ-T20" id="CRR-Rp-bdf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -370,7 +392,7 @@
                         <segue destination="GOb-Na-iu5" kind="relationship" relationship="viewControllers" id="QhZ-WN-dip"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="WOt-It-Tqx" kind="relationship" relationship="viewControllers" id="bKJ-8i-8bv"/>
-                        <segue destination="S77-Db-gGK" kind="relationship" relationship="viewControllers" id="zFv-fZ-bM7"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="TnN-8b-9R2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

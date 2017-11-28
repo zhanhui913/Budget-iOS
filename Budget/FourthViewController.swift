@@ -148,7 +148,7 @@ extension FourthViewController : JTAppleCalendarViewDataSource {
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
-        //When scrolling calendar, change label
+        //When scrolling calendar, change labelf
         setupViewsOfCalendar(from: visibleDates)
     }
 }
