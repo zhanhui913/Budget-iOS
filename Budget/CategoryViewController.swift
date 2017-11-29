@@ -14,6 +14,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // Data model: These strings will be the data for the table view cells
     let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
+    let cost: [String] = ["$55.00","$9066.44","$543.94","$1.33","$9.13"]
     
     // cell reuse id (cells that scroll out of view can be reused)
     let cellReuseIdentifier = "TransactionTableViewCell"
@@ -60,7 +61,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // Fetches the appropriate meal for the data source layout.
         cell.transactionName.text = self.animals[indexPath.row]
-        
+        cell.transactionCost.text = self.cost[indexPath.row]
 
         
         return cell

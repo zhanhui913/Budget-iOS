@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,42 +24,51 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionTableViewCell" id="dUX-m6-RPi" customClass="TransactionTableViewCell" customModule="Budget" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TransactionTableViewCell" rowHeight="50" id="dUX-m6-RPi" customClass="TransactionTableViewCell" customModule="Budget" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dUX-m6-RPi" id="DOn-S3-MZk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dUX-m6-RPi" id="DOn-S3-MZk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aNJ-VN-Emq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
-                                                    <color key="backgroundColor" red="0.2053596526" green="0.47042700650000002" blue="0.96476280690000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNJ-VN-Emq">
+                                                    <rect key="frame" x="8" y="8" width="34" height="34"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="RGg-ua-j6v"/>
-                                                        <constraint firstAttribute="height" constant="40" id="wH1-lA-D5Z"/>
+                                                        <constraint firstAttribute="width" constant="34" id="RGg-ua-j6v"/>
+                                                        <constraint firstAttribute="height" constant="34" id="wH1-lA-D5Z"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="20"/>
+                                                            <integer key="value" value="17"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6c-eT-53r">
-                                                    <rect key="frame" x="166" y="11" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6c-eT-53r">
+                                                    <rect key="frame" x="50" y="14" width="139" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYz-BJ-Ap7">
+                                                    <rect key="frame" x="323" y="14" width="45" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="aNJ-VN-Emq" firstAttribute="leading" secondItem="DOn-S3-MZk" secondAttribute="leading" id="7la-tH-U1x"/>
-                                                <constraint firstItem="T6c-eT-53r" firstAttribute="centerX" secondItem="DOn-S3-MZk" secondAttribute="centerX" id="J8k-Be-hN0"/>
-                                                <constraint firstItem="T6c-eT-53r" firstAttribute="centerY" secondItem="DOn-S3-MZk" secondAttribute="centerY" id="VKI-af-dI6"/>
-                                                <constraint firstAttribute="bottom" secondItem="aNJ-VN-Emq" secondAttribute="bottom" id="iMG-bH-sCE"/>
-                                                <constraint firstItem="aNJ-VN-Emq" firstAttribute="top" secondItem="DOn-S3-MZk" secondAttribute="top" id="lry-kc-BUb"/>
+                                                <constraint firstItem="T6c-eT-53r" firstAttribute="leading" secondItem="aNJ-VN-Emq" secondAttribute="trailing" constant="8" id="2vD-Ic-u8L"/>
+                                                <constraint firstItem="CYz-BJ-Ap7" firstAttribute="trailing" secondItem="DOn-S3-MZk" secondAttribute="trailingMargin" constant="8" id="BkP-Wc-kOq"/>
+                                                <constraint firstItem="CYz-BJ-Ap7" firstAttribute="centerY" secondItem="DOn-S3-MZk" secondAttribute="centerY" id="CMI-1L-GrA"/>
+                                                <constraint firstItem="aNJ-VN-Emq" firstAttribute="leading" secondItem="DOn-S3-MZk" secondAttribute="leading" constant="8" id="EZ7-I4-ZCH"/>
+                                                <constraint firstItem="aNJ-VN-Emq" firstAttribute="top" secondItem="DOn-S3-MZk" secondAttribute="top" constant="8" id="X3w-Df-maO"/>
+                                                <constraint firstItem="T6c-eT-53r" firstAttribute="centerY" secondItem="DOn-S3-MZk" secondAttribute="centerY" id="XUv-hn-qX0"/>
+                                                <constraint firstAttribute="bottom" secondItem="aNJ-VN-Emq" secondAttribute="bottom" constant="8" id="not-vw-XIo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="transactionCost" destination="CYz-BJ-Ap7" id="5hQ-Jd-oAP"/>
                                             <outlet property="transactionName" destination="T6c-eT-53r" id="MPD-CY-iuP"/>
                                         </connections>
                                     </tableViewCell>
