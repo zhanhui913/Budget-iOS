@@ -84,7 +84,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Category" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" title="Category" id="1mN-KT-RhN">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="OWf-bc-GZS">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,7 +133,7 @@
         <scene sceneID="skL-tn-pwj">
             <objects>
                 <navigationController title="Account Navigation" id="3fy-RH-h4g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" id="ufO-UM-ej7"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="second" id="ufO-UM-ej7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="JUA-vK-FTW">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -182,7 +181,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" image="second" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" title="Account" id="wwk-yw-EqX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -193,7 +191,7 @@
         <scene sceneID="jj6-Il-YJa">
             <objects>
                 <navigationController title="Location Navigation" id="a6Q-N0-KAe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Location" id="STh-yu-xKH"/>
+                    <tabBarItem key="tabBarItem" title="Location" image="first" id="STh-yu-xKH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="t1c-pp-n1v">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -220,7 +218,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="bQg-Cc-vHh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Location" image="first" id="3NL-0a-RBI"/>
                     <navigationItem key="navigationItem" title="Location" id="81o-7A-qzr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVy-D7-NuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -460,7 +457,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NVr-Hw-gnw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="second" id="fcw-jf-vV0"/>
                     <navigationItem key="navigationItem" title="Calendar" id="pM2-OU-JUd"/>
                     <connections>
                         <outlet property="calendarView" destination="mda-Ie-fo2" id="OTE-Qa-tD8"/>
@@ -475,7 +471,7 @@
         <scene sceneID="KM6-iL-0qk">
             <objects>
                 <navigationController title="Settings Navigation" id="ADu-Xd-yQx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="Settings" id="13S-uj-fNa"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" selectedImage="Settings" id="13S-uj-fNa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Oim-0P-d1L">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -496,7 +492,7 @@
         <scene sceneID="li9-dX-rzo">
             <objects>
                 <navigationController title="Calendar Navigation" id="sFG-gO-L9c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calendar" id="Xet-gw-FWX"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="first" id="Xet-gw-FWX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="B8E-Tb-d0X">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -523,7 +519,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="7P5-41-zDH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="EvX-YI-eGv"/>
                     <navigationItem key="navigationItem" title="Settings" id="sUj-CI-FGh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZT-mC-ljD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -534,7 +529,7 @@
         <scene sceneID="Itj-hb-HP1">
             <objects>
                 <navigationController title="Category Navigation" id="utq-Cn-zNw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Category" id="vfY-dd-eL3"/>
+                    <tabBarItem key="tabBarItem" title="Category" image="second" id="vfY-dd-eL3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="udW-vd-IjU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

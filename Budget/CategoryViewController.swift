@@ -13,16 +13,19 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var transactionTableView: UITableView!
     
     // Data model: These strings will be the data for the table view cells
-    let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
-    let cost: [String] = ["$55.00","$9066.44","$543.94","$1.33","$9.13"]
+    let expense: [String] = ["Breakfast", "Lunch", "Shopping", "Dinner", "Movies"]
+    let expenseCost: [String] = ["$55.00","$9066.44","$543.94","$1.33","$9.13"]
+    
+    let income: [String] = ["Salary","Salary","Other","Lottery","Salary","Investment","Other","Found"]
+    let incomeCost: [String] = ["$9876.09","$7765.66","$1.32","$11023.33","$876.09","$16.09","$1122.00","$10"]
     
     // cell reuse id (cells that scroll out of view can be reused)
     let cellReuseIdentifier = "TransactionTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navName.title = "Calendar"
         setupTable();
+        setupData();
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +39,10 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         transactionTableView.dataSource = self
     }
 
+    func setupData(){
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -46,23 +53,49 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     */
     
+    //number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    //section header
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if(section == 1){
+            return "Expense"
+        }else{
+            return "Income"
+        }
+    }
+    
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.animals.count
+        if(section == 1){
+            return expense.count
+        }else{
+            return income.count
+        }
     }
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-/*        let cell = self.transactionTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! TransactionTableViewCell
-*/
         guard let cell = transactionTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? TransactionTableViewCell  else {
             fatalError("The dequeued cell is not an instance of TransactionTableViewCell.")
         }
         
-        // Fetches the appropriate meal for the data source layout.
-        cell.transactionName.text = self.animals[indexPath.row]
-        cell.transactionCost.text = self.cost[indexPath.row]
-
+        // Fetches the appropriate expense for the data source layout.
+  /*      cell.transactionName.text = self.expense[indexPath.row]
+        cell.transactionCost.text = self.expenseCost[indexPath.row]
+*/
+        if(indexPath.section == 1){
+            // Fetches the appropriate expense for the data source layout.
+            cell.transactionName.text = self.expense[indexPath.row]
+            cell.transactionCost.text = self.expenseCost[indexPath.row]
+        }else{
+            // Fetches the appropriate expense for the data source layout.
+            cell.transactionName.text = self.income[indexPath.row]
+            cell.transactionCost.text = self.incomeCost[indexPath.row]
+        }
+        
         
         return cell
     }
