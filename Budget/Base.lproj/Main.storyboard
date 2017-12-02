@@ -183,7 +183,7 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" image="second" id="cPa-gy-q4n"/>
-                    <navigationItem key="navigationItem" id="wwk-yw-EqX"/>
+                    <navigationItem key="navigationItem" title="Account" id="wwk-yw-EqX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,7 +221,7 @@
                         <viewLayoutGuide key="safeArea" id="bQg-Cc-vHh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Location" image="first" id="3NL-0a-RBI"/>
-                    <navigationItem key="navigationItem" id="81o-7A-qzr"/>
+                    <navigationItem key="navigationItem" title="Location" id="81o-7A-qzr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVy-D7-NuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -461,7 +461,7 @@
                         <viewLayoutGuide key="safeArea" id="NVr-Hw-gnw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="second" id="fcw-jf-vV0"/>
-                    <navigationItem key="navigationItem" id="pM2-OU-JUd"/>
+                    <navigationItem key="navigationItem" title="Calendar" id="pM2-OU-JUd"/>
                     <connections>
                         <outlet property="calendarView" destination="mda-Ie-fo2" id="OTE-Qa-tD8"/>
                         <outlet property="dateLabel" destination="9AB-x5-GdP" id="pzu-MG-nX3"/>
@@ -524,7 +524,7 @@
                         <viewLayoutGuide key="safeArea" id="7P5-41-zDH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="EvX-YI-eGv"/>
-                    <navigationItem key="navigationItem" id="sUj-CI-FGh"/>
+                    <navigationItem key="navigationItem" title="Settings" id="sUj-CI-FGh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZT-mC-ljD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
