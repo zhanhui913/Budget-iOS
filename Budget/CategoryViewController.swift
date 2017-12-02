@@ -21,7 +21,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //navName.title = "Calendar"
         setupTable();
     }
 
