@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import GTProgressBar
 
 class TransactionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var transactionName : UILabel!
     @IBOutlet weak var transactionCost : UILabel!
+    @IBOutlet weak var progress : GTProgressBar!
+    
     /*
     override func awakeFromNib() {
         super.awakeFromNib()
