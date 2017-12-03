@@ -1,12 +1,15 @@
 PODS:
+  - GTProgressBar (0.2.1)
   - JTAppleCalendar (7.1.3)
 
 DEPENDENCIES:
+  - GTProgressBar (~> 0.2.1)
   - JTAppleCalendar (~> 7.0)
 
 SPEC CHECKSUMS:
+  GTProgressBar: 36acc68b34a2b8c0dc14fdeefdbbad64049a6966
   JTAppleCalendar: df26e97d7ba5b42c8a5ad4eabdccb4843878d40e
 
-PODFILE CHECKSUM: 675f9a15ee4bc882bc6e0d448f913f6a14b6b09c
+PODFILE CHECKSUM: effb34e77cb95dad48e4aa203cbfb0c9042711e5
 
 COCOAPODS: 1.3.1
