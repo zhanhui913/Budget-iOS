@@ -13,7 +13,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var transactionTableView: UITableView!
     
     // Data model: These strings will be the data for the table view cells
-    let expense: [String] = ["Breakfast", "Lunch", "Shopping", "Dinner", "Movies"]
+    let expense: [String] = ["Breakfast with Friends at who knows what the restaurant is called", "Lunch", "Shopping", "Dinner", "Movies"]
     let expenseCost: [String] = ["$55.00","$9066.44","$543.94","$1.33","$9.13"]
     
     let income: [String] = ["Salary","Salary","Other","Lottery","Salary","Investment","Other","Found"]
@@ -93,7 +93,6 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.progress.barBorderColor = UIColor(red:0.35, green:0.8, blue:0.36, alpha:1.0)
             cell.progress.barFillColor = UIColor(red:0.35, green:0.8, blue:0.36, alpha:1.0)
             cell.progress.barBackgroundColor = UIColor(red:0.77, green:0.93, blue:0.78, alpha:1.0)
-            
         }else{
             // Fetches the appropriate expense for the data source layout.
             cell.transactionName.text = self.income[indexPath.row]
