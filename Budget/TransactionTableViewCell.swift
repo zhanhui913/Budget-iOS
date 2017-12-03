@@ -11,16 +11,22 @@ import GTProgressBar
 
 class TransactionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var icon : UIView!
     @IBOutlet weak var transactionName : UILabel!
     @IBOutlet weak var transactionCost : UILabel!
     @IBOutlet weak var progress : GTProgressBar!
     
-    /*
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        icon.layer.cornerRadius = 22
+        
+        progress.barBorderWidth = 0
+        progress.barFillInset = 0
+        progress.displayLabel = false
     }
-
+/*
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

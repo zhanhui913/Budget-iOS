@@ -83,9 +83,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         // Fetches the appropriate expense for the data source layout.
-  /*      cell.transactionName.text = self.expense[indexPath.row]
-        cell.transactionCost.text = self.expenseCost[indexPath.row]
-*/
+
         if(indexPath.section == 1){
             // Fetches the appropriate expense for the data source layout.
             cell.transactionName.text = self.expense[indexPath.row]
@@ -95,9 +93,6 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.progress.barBorderColor = UIColor(red:0.35, green:0.8, blue:0.36, alpha:1.0)
             cell.progress.barFillColor = UIColor(red:0.35, green:0.8, blue:0.36, alpha:1.0)
             cell.progress.barBackgroundColor = UIColor(red:0.77, green:0.93, blue:0.78, alpha:1.0)
-            cell.progress.barBorderWidth = 0
-            cell.progress.barFillInset = 0
-            cell.progress.displayLabel = false
             
         }else{
             // Fetches the appropriate expense for the data source layout.
@@ -108,9 +103,6 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.progress.barBorderColor = UIColor(red:0.35, green:0.8, blue:0.36, alpha:1.0)
             cell.progress.barFillColor = UIColor(red:0.35, green:0.8, blue:0.36, alpha:1.0)
             cell.progress.barBackgroundColor = UIColor(red:0.77, green:0.93, blue:0.78, alpha:1.0)
-            cell.progress.barBorderWidth = 0
-            cell.progress.barFillInset = 0
-            cell.progress.displayLabel = false
         }
         
         
