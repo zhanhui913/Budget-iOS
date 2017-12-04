@@ -28,7 +28,7 @@ class CalendarViewController: UIViewController {
     let selectedDateColor = UIColor.red
     
     let todayNotSelectedTextColor = UIColor(colorWithHexValue : 0x00FF00)
-    let todaySelectedTextColor = #colorLiteral(red: 0.004680971149, green: 0.4778389335, blue: 0.998493135, alpha: 1)
+    let todaySelectedTextColor = UIColor(colorWithHexValue : 0x1C8046) //dark green
     
     let today = Date()
     
@@ -62,7 +62,7 @@ class CalendarViewController: UIViewController {
     }
     
     func handleCellTextSelected(view : JTAppleCell?, cellState : CellState){
-        guard let validCell = view as? CustomCell else { return }
+        guard let validCell = view as? CustomCalendarCell else { return }
         if validCell.isSelected {
             validCell.selectedView.isHidden = false
         } else {
@@ -71,7 +71,7 @@ class CalendarViewController: UIViewController {
     }
     
     func handleCellTextColor(view : JTAppleCell?, cellState : CellState, date : Date){
-        guard let validCell = view as? CustomCell else { return }
+        guard let validCell = view as? CustomCalendarCell else { return }
         if cellState.isSelected {
             //Orig
             //validCell.dateLabel.textColor = selectedDateColor
@@ -99,7 +99,7 @@ class CalendarViewController: UIViewController {
         //self.dateLabel.text = self.formatter.string(from: date)
     }
     
-    func handleTodayCellTextColor(validCell : CustomCell, date: Date, todayTextColor : UIColor, notTodayTextColor : UIColor) {
+    func handleTodayCellTextColor(validCell : CustomCalendarCell, date: Date, todayTextColor : UIColor, notTodayTextColor : UIColor) {
         validCell.dateLabel.textColor = (currentCalendar.isDateInToday(date)) ? todayTextColor : notTodayTextColor
     }
 }
@@ -136,7 +136,7 @@ extension CalendarViewController : JTAppleCalendarViewDelegate {
 extension CalendarViewController : JTAppleCalendarViewDataSource {
     //Display the cell
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
-        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCalendarCell", for: indexPath) as! CustomCalendarCell
         cell.dateLabel.text = cellState.text
         
         handleCellTextSelected(view : cell, cellState : cellState)
