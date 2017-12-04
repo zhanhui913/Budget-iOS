@@ -244,7 +244,7 @@
         <!--Ib Calendar Data Source-->
         <scene sceneID="28x-Fk-gno">
             <objects>
-                <viewController title="Calendar" id="GOb-Na-iu5" customClass="FourthViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Calendar" id="GOb-Na-iu5" customClass="CalendarViewController" customModule="Budget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KUa-LE-AbQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -678,6 +678,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="KNJ-UE-JHs" secondAttribute="trailing" id="KlZ-x1-1WJ"/>
                             <constraint firstItem="KNJ-UE-JHs" firstAttribute="leading" secondItem="j2C-1c-kfx" secondAttribute="leadingMargin" id="j3T-7o-VBl"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="2ij-MX-0HJ"/>
                     </view>
                     <connections>
                         <outlet property="cost" destination="qvK-6Z-WRl" id="LB0-K1-y6g"/>

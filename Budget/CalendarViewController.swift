@@ -15,7 +15,7 @@ protocol CalendarDelegate: class {
     func calendarScroll(_ date: Date)
 }
 
-class FourthViewController: UIViewController {
+class CalendarViewController: UIViewController {
     let formatter = DateFormatter()
     
     weak var delegate:CalendarDelegate?
@@ -105,7 +105,7 @@ class FourthViewController: UIViewController {
 }
 
 
-extension FourthViewController : JTAppleCalendarViewDelegate {
+extension CalendarViewController : JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         print("fourth view controller here 2")
     }
@@ -133,7 +133,7 @@ extension FourthViewController : JTAppleCalendarViewDelegate {
     }
 }
 
-extension FourthViewController : JTAppleCalendarViewDataSource {
+extension CalendarViewController : JTAppleCalendarViewDataSource {
     //Display the cell
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell

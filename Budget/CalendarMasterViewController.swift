@@ -15,7 +15,7 @@ class CalendarMasterViewController: UIViewController {
     let monthFormatter = DateFormatter()
 
     
-    //fileprivate var calendarViewController: FourthViewController?
+    //fileprivate var calendarViewController: CalendarViewController?
     fileprivate var infoPanelViewController : InfoPanelViewController?
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class CalendarMasterViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let destination = segue.destination
-        if let calendarController = destination as? FourthViewController {
+        if let calendarController = destination as? CalendarViewController {
             //calendarViewController = calendarController
             calendarController.delegate = self
         }
