@@ -12,4 +12,10 @@ import JTAppleCalendar
 class CustomCalendarCell: JTAppleCell {
     @IBOutlet weak var dateLabel : UILabel!
     @IBOutlet weak var selectedView : UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        selectedView.layer.cornerRadius = selectedView.frame.size.height / 2
+    }
 }
