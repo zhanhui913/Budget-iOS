@@ -9,11 +9,19 @@
 import JTAppleCalendar
 import os.log
 
+protocol CalendarDelegate: class {
+    func dateSelected(_ date: Date)
+    
+    func calendarScroll(_ date: Date)
+}
+
 class FourthViewController: UIViewController {
     let formatter = DateFormatter()
     
+    weak var delegate:CalendarDelegate?
+    
     @IBOutlet weak var calendarView: JTAppleCalendarView!
-    @IBOutlet weak var dateLabel : UILabel!
+    //@IBOutlet weak var dateLabel : UILabel!
     
     let outsideMonthTextColor = UIColor(colorWithHexValue : 0xFFBDBDBD) //light gray
     let thisMonthTextColor = UIColor.darkGray
@@ -88,7 +96,7 @@ class FourthViewController: UIViewController {
         let date = visibleDates.monthDates.first!.date
         
         self.formatter.dateFormat = "MMM yyyy"
-        self.dateLabel.text = self.formatter.string(from: date)
+        //self.dateLabel.text = self.formatter.string(from: date)
     }
     
     func handleTodayCellTextColor(validCell : CustomCell, date: Date, todayTextColor : UIColor, notTodayTextColor : UIColor) {
@@ -140,6 +148,7 @@ extension FourthViewController : JTAppleCalendarViewDataSource {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellTextSelected(view : cell, cellState : cellState)
         handleCellTextColor(view : cell, cellState : cellState, date : date)
+        self.delegate?.dateSelected(date)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
@@ -149,7 +158,9 @@ extension FourthViewController : JTAppleCalendarViewDataSource {
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         //When scrolling calendar, change labelf
-        setupViewsOfCalendar(from: visibleDates)
+        //setupViewsOfCalendar(from: visibleDates)
+        
+        self.delegate?.calendarScroll(visibleDates.monthDates.first!.date)
     }
 }
 
