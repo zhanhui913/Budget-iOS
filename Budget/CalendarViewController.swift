@@ -11,8 +11,7 @@ import os.log
 
 protocol CalendarDelegate: class {
     func dateSelected(_ date: Date)
-    
-    func calendarScroll(_ date: Date)
+    func currentVisibleMonth(_ date: Date)
 }
 
 class CalendarViewController: UIViewController {
@@ -21,7 +20,6 @@ class CalendarViewController: UIViewController {
     weak var delegate:CalendarDelegate?
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
-    //@IBOutlet weak var dateLabel : UILabel!
     
     let outsideMonthTextColor = UIColor(colorWithHexValue : 0xFFBDBDBD) //light gray
     let thisMonthTextColor = UIColor.darkGray
@@ -93,10 +91,7 @@ class CalendarViewController: UIViewController {
     
     func setupViewsOfCalendar(from visibleDates: DateSegmentInfo){
         //Setup month and year view of current visible date
-        let date = visibleDates.monthDates.first!.date
-        
-        self.formatter.dateFormat = "MMM yyyy"
-        //self.dateLabel.text = self.formatter.string(from: date)
+        self.delegate?.currentVisibleMonth(visibleDates.monthDates.first!.date)
     }
     
     func handleTodayCellTextColor(validCell : CustomCalendarCell, date: Date, todayTextColor : UIColor, notTodayTextColor : UIColor) {
@@ -157,10 +152,8 @@ extension CalendarViewController : JTAppleCalendarViewDataSource {
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
-        //When scrolling calendar, change labelf
-        //setupViewsOfCalendar(from: visibleDates)
-        
-        self.delegate?.calendarScroll(visibleDates.monthDates.first!.date)
+        //When scrolling calendar, change label
+        setupViewsOfCalendar(from: visibleDates)
     }
 }
 

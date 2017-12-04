@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransactionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class TransactionViewController: UIViewController/*, UITableViewDataSource, UITableViewDelegate*/{
 
     @IBOutlet weak var transactionTableView: UITableView!
     
@@ -34,52 +34,13 @@ class TransactionViewController: UIViewController, UITableViewDataSource, UITabl
         transactionTableView.delegate = self
         transactionTableView.dataSource = self
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    
-    // number of rows in table view
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return expense.count
-    }
-    
-    // create a cell for each table view row
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = transactionTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? TransactionItemViewCell  else {
-            fatalError("The dequeued cell is not an instance of TransactionViewCell.")
-        }
-        
-        // Fetches the appropriate expense for the data source layout.
-        
-        cell.transactionName.text = self.expense[indexPath.row]
-        cell.transactionCost.text = self.expenseCost[indexPath.row]
-            
-
-        
-        return cell
-    }
-    
-    // method to run when table view cell is tapped
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
-    }
-    
 }
-/*
+
 extension TransactionViewController : UITableViewDataSource {
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = transactionTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? TransactionItemViewCell  else {
-            fatalError("The dequeued cell is not an instance of TransactionItemViewCell.")
+        guard let cell = transactionTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifier, for: indexPath) as? TransactionItemViewCell else {
+            fatalError("The dequeued cell is not an instance of TransactionViewCell.")
         }
         
         // Fetches the appropriate expense for the data source layout.
@@ -93,11 +54,11 @@ extension TransactionViewController : UITableViewDataSource {
 extension TransactionViewController : UITableViewDelegate {
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return expense.count
+        return self.expense.count
     }
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
     }
-}*/
+}

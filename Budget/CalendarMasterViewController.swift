@@ -10,12 +10,10 @@ import UIKit
 
 class CalendarMasterViewController: UIViewController {
 
-    
     let dateFormatter = DateFormatter()
     let monthFormatter = DateFormatter()
 
-    
-    //fileprivate var calendarViewController: CalendarViewController?
+    fileprivate var transactionViewController: TransactionViewController?
     fileprivate var infoPanelViewController : InfoPanelViewController?
     
     override func viewDidLoad() {
@@ -30,27 +28,21 @@ class CalendarMasterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let destination = segue.destination
         if let calendarController = destination as? CalendarViewController {
-            //calendarViewController = calendarController
             calendarController.delegate = self
         }
         
         if let infoController = destination as? InfoPanelViewController {
             infoPanelViewController = infoController
         }
+        
+        if let transactionController = destination as? TransactionViewController {
+            transactionViewController = transactionController
+        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 extension CalendarMasterViewController : CalendarDelegate {
@@ -61,7 +53,7 @@ extension CalendarMasterViewController : CalendarDelegate {
         infoPanelViewController?.cost.text = "$9.13"
     }
     
-    func calendarScroll(_ date: Date) {
+    func currentVisibleMonth(_ date: Date) {
         self.title = self.monthFormatter.string(from: date)
     }
 }
