@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TransactionTableViewCell" rowHeight="60" id="dUX-m6-RPi" customClass="TransactionTableViewCell" customModule="Budget" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CategoryItemViewCell" rowHeight="60" id="dUX-m6-RPi" customClass="CategoryItemViewCell" customModule="Budget" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dUX-m6-RPi" id="DOn-S3-MZk">
@@ -78,7 +78,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="icon" destination="aNJ-VN-Emq" id="23C-qq-zdS"/>
+                                            <outlet property="icon" destination="aNJ-VN-Emq" id="y55-Zi-TU9"/>
                                             <outlet property="progress" destination="TXJ-um-r9v" id="BHj-uw-lp0"/>
                                             <outlet property="transactionCost" destination="CYz-BJ-Ap7" id="5hQ-Jd-oAP"/>
                                             <outlet property="transactionName" destination="T6c-eT-53r" id="MPD-CY-iuP"/>

@@ -20,7 +20,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     let incomeCost: [String] = ["$9876.09","$7765.66","$1.32","$11023.33","$876.09","$16.09","$1122.00","$10"]
     
     // cell reuse id (cells that scroll out of view can be reused)
-    let cellReuseIdentifier = "TransactionTableViewCell"
+    let cellReuseIdentifier = "CategoryItemViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,8 +78,8 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = transactionTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? TransactionTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of TransactionTableViewCell.")
+        guard let cell = transactionTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? CategoryItemViewCell  else {
+            fatalError("The dequeued cell is not an instance of CategoryItemViewCell.")
         }
         
         // Fetches the appropriate expense for the data source layout.

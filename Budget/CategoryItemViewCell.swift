@@ -9,13 +9,12 @@
 import UIKit
 import GTProgressBar
 
-class TransactionTableViewCell: UITableViewCell {
+class CategoryItemViewCell: UITableViewCell {
 
     @IBOutlet weak var icon : UIView!
     @IBOutlet weak var transactionName : UILabel!
     @IBOutlet weak var transactionCost : UILabel!
     @IBOutlet weak var progress : GTProgressBar!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

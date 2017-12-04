@@ -13,6 +13,7 @@
 		7F42BC141FD4991300B855CA /* Item in Resources */ = {isa = PBXBuildFile; fileRef = 7F42BC131FD4991300B855CA /* Item */; };
 		7F42BC161FD4AF1400B855CA /* CalendarMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F42BC151FD4AF1400B855CA /* CalendarMasterViewController.swift */; };
 		7F42BC181FD4C4D700B855CA /* InfoPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F42BC171FD4C4D700B855CA /* InfoPanelViewController.swift */; };
+		7F42BC1A1FD4FC6600B855CA /* CategoryItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F42BC191FD4FC6600B855CA /* CategoryItemViewCell.swift */; };
 		7F6550F81FB8CDEA003F0F16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6550F71FB8CDEA003F0F16 /* AppDelegate.swift */; };
 		7F6550FA1FB8CDEA003F0F16 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6550F91FB8CDEA003F0F16 /* FirstViewController.swift */; };
 		7F6550FC1FB8CDEA003F0F16 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6550FB1FB8CDEA003F0F16 /* SecondViewController.swift */; };
@@ -26,7 +27,6 @@
 		7F65512C1FB8D9FC003F0F16 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65512B1FB8D9FC003F0F16 /* SettingsViewController.swift */; };
 		7FC017531FBA4F30005DC481 /* CustomCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC017521FBA4F30005DC481 /* CustomCalendarCell.swift */; };
 		7FEAE70C1FC51DAF00C215AC /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAE70B1FC51DAF00C215AC /* DateUtil.swift */; };
-		7FF5EE4C1FCB5AFB0005BF20 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5EE4B1FCB5AFB0005BF20 /* TransactionTableViewCell.swift */; };
 		7FF5EE4E1FCB834B0005BF20 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5EE4D1FCB834B0005BF20 /* CategoryViewController.swift */; };
 		BED7CD36E4B06BB303A5D46C /* Pods_Budget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1E808529528F8A083CD759 /* Pods_Budget.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +56,7 @@
 		7F42BC131FD4991300B855CA /* Item */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Item; sourceTree = "<group>"; };
 		7F42BC151FD4AF1400B855CA /* CalendarMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMasterViewController.swift; sourceTree = "<group>"; };
 		7F42BC171FD4C4D700B855CA /* InfoPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelViewController.swift; sourceTree = "<group>"; };
+		7F42BC191FD4FC6600B855CA /* CategoryItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryItemViewCell.swift; sourceTree = "<group>"; };
 		7F6550F41FB8CDEA003F0F16 /* Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F6550F71FB8CDEA003F0F16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F6550F91FB8CDEA003F0F16 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		7F65512B1FB8D9FC003F0F16 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7FC017521FBA4F30005DC481 /* CustomCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarCell.swift; sourceTree = "<group>"; };
 		7FEAE70B1FC51DAF00C215AC /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
-		7FF5EE4B1FCB5AFB0005BF20 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		7FF5EE4D1FCB834B0005BF20 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		8BF171488693F461CFF489DC /* Pods-Budget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Budget/Pods-Budget.release.xcconfig"; sourceTree = "<group>"; };
 		CF1E808529528F8A083CD759 /* Pods_Budget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,10 +133,10 @@
 			isa = PBXGroup;
 			children = (
 				7F42BC111FD4978A00B855CA /* Model */,
-				7FF5EE4B1FCB5AFB0005BF20 /* TransactionTableViewCell.swift */,
 				7F42BC131FD4991300B855CA /* Item */,
 				7F6550F71FB8CDEA003F0F16 /* AppDelegate.swift */,
 				7F6550F91FB8CDEA003F0F16 /* FirstViewController.swift */,
+				7F42BC191FD4FC6600B855CA /* CategoryItemViewCell.swift */,
 				7F6550FB1FB8CDEA003F0F16 /* SecondViewController.swift */,
 				7F6550FD1FB8CDEA003F0F16 /* Main.storyboard */,
 				7F6551001FB8CDEA003F0F16 /* Assets.xcassets */,
@@ -396,10 +396,10 @@
 				7F65512A1FB8D9EB003F0F16 /* CalendarViewController.swift in Sources */,
 				7FEAE70C1FC51DAF00C215AC /* DateUtil.swift in Sources */,
 				7F65512C1FB8D9FC003F0F16 /* SettingsViewController.swift in Sources */,
-				7FF5EE4C1FCB5AFB0005BF20 /* TransactionTableViewCell.swift in Sources */,
 				7F42BC181FD4C4D700B855CA /* InfoPanelViewController.swift in Sources */,
 				7FC017531FBA4F30005DC481 /* CustomCalendarCell.swift in Sources */,
 				7F42BC0C1FD3486400B855CA /* AddCategoryViewController.swift in Sources */,
+				7F42BC1A1FD4FC6600B855CA /* CategoryItemViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
