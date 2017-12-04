@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
-    @IBOutlet weak var transactionTableView: UITableView!
+    @IBOutlet weak var categoriesTableView: UITableView!
     
     // Data model: These strings will be the data for the table view cells
     let expense: [String] = ["Breakfast with Friends at who knows what the restaurant is called", "Lunch", "Shopping", "Dinner", "Movies"]
@@ -35,8 +35,8 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func setupTable(){
         // This view controller itself will provide the delegate methods and row data for the table view.
-        transactionTableView.delegate = self
-        transactionTableView.dataSource = self
+        categoriesTableView.delegate = self
+        categoriesTableView.dataSource = self
     }
 
     func setupData(){
@@ -78,7 +78,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = transactionTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? CategoryItemViewCell  else {
+        guard let cell = categoriesTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? CategoryItemViewCell  else {
             fatalError("The dequeued cell is not an instance of CategoryItemViewCell.")
         }
         
