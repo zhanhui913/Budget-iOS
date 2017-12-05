@@ -27,6 +27,7 @@
 		7F6551281FB8D9D4003F0F16 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6551271FB8D9D4003F0F16 /* ThirdViewController.swift */; };
 		7F65512A1FB8D9EB003F0F16 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6551291FB8D9EB003F0F16 /* CalendarViewController.swift */; };
 		7F65512C1FB8D9FC003F0F16 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65512B1FB8D9FC003F0F16 /* SettingsViewController.swift */; };
+		7F6FA7441FD64DA7006B9B9B /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FA7431FD64DA7006B9B9B /* AddTransactionViewController.swift */; };
 		7FC017531FBA4F30005DC481 /* CustomCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC017521FBA4F30005DC481 /* CustomCalendarCell.swift */; };
 		7FEAE70C1FC51DAF00C215AC /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAE70B1FC51DAF00C215AC /* DateUtil.swift */; };
 		7FF5EE4E1FCB834B0005BF20 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5EE4D1FCB834B0005BF20 /* CategoryViewController.swift */; };
@@ -78,6 +79,7 @@
 		7F6551271FB8D9D4003F0F16 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		7F6551291FB8D9EB003F0F16 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		7F65512B1FB8D9FC003F0F16 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7F6FA7431FD64DA7006B9B9B /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 		7FC017521FBA4F30005DC481 /* CustomCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarCell.swift; sourceTree = "<group>"; };
 		7FEAE70B1FC51DAF00C215AC /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		7FF5EE4D1FCB834B0005BF20 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				7F42BC171FD4C4D700B855CA /* InfoPanelViewController.swift */,
 				7F42BC1B1FD4FE4B00B855CA /* TransactionViewController.swift */,
 				7F42BC1D1FD4FE5F00B855CA /* TransactionItemViewCell.swift */,
+				7F6FA7431FD64DA7006B9B9B /* AddTransactionViewController.swift */,
 			);
 			path = Budget;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				7FF5EE4E1FCB834B0005BF20 /* CategoryViewController.swift in Sources */,
 				7F6550FC1FB8CDEA003F0F16 /* SecondViewController.swift in Sources */,
 				7F42BC101FD37B3000B855CA /* AccountViewController.swift in Sources */,
+				7F6FA7441FD64DA7006B9B9B /* AddTransactionViewController.swift in Sources */,
 				7F42BC161FD4AF1400B855CA /* CalendarMasterViewController.swift in Sources */,
 				7F6551281FB8D9D4003F0F16 /* ThirdViewController.swift in Sources */,
 				7F6550FA1FB8CDEA003F0F16 /* FirstViewController.swift in Sources */,

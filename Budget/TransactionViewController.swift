@@ -12,8 +12,8 @@ class TransactionViewController: UIViewController/*, UITableViewDataSource, UITa
 
     @IBOutlet weak var transactionTableView: UITableView!
     
-    let expense: [String] = ["Breakfast with Friends at who knows what the restaurant is called", "Lunch", "Shopping", "Dinner", "Movies"]
-    let expenseCost: [String] = ["$55.00","$9066.44","$543.94","$1.33","$9.13"]
+    let expense: [String] = ["Breakfast with Friends at who knows what the restaurant is called", "Lunch", "Shopping", "Dinner", "Movies", "Clothes", "Lunch","Dim sum"]
+    let expenseCost: [String] = ["$55.00","$9066.44","$543.94","$1.33","$9.13", "$98.33","$58.49","$112.33"]
 
     // cell reuse id (cells that scroll out of view can be reused)
     let cellReuseIdentifier = "TransactionViewCell"
